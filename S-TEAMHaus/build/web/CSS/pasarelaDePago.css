@@ -1,0 +1,579 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27 oct. 2024, 18:54:24
+    Author     : diego
+*/
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+button{
+    background-color: #fff;
+    border: none;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: space-between;
+    align-items: center;
+    background: #D9D9D9;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Colores de texto */
+header p,header h1,header h2,header h3 {
+    color: #0a0a0a;
+}
+
+/* Estilo para el logo y el título */
+.header-STEM {
+    display: flex;
+    align-items: center;
+}
+
+.header-STEM img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+.header-STEM a,.header-STEM h2{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Estilo para los enlaces */
+.header-links {
+    display: flex;
+    gap: 20px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.header-links a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff; /* Cambiar color del texto de los enlaces a blanco */
+}
+
+.header-links img {
+    width: 30px;
+    height: auto;
+    margin-right: 5px;
+}
+
+/* Estilo para el usuario */
+.header-usuario {
+    display: flex;
+    float: right;
+    margin-left: auto;
+    font-size: 16px;
+    color: #fff;
+}
+.header-usuario a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 1.5vw;
+}
+.header-usuario img{
+    width: 40px;
+    height:  auto;
+    margin-right: 5px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: flex-start; /* Alinear los elementos a la izquierda */
+    }
+
+    .header-links {
+        justify-content: center; /* Centra los enlaces en la fila */
+        margin: 10px 0; /* Espaciado vertical */
+        width: 100%; /* Toma el ancho completo */
+    }
+
+    .header-links a {
+        margin: 5px 0; /* Espaciado entre enlaces en vertical */
+        width: 100%; /* Opción: Tomar el ancho completo */
+        text-align: center; /* Centrar el texto */
+    }
+
+    .header-usuario {
+        margin-top: 10px; /* Espacio superior en pantallas pequeñas */
+        width: 100%; /* Opción: Tomar el ancho completo */
+        text-align: center; /* Centrar el texto del usuario */
+    }
+}
+
+.custom-select {
+    width: 4vw; /* Anchura del select */
+    position: relative;
+    display: inline-block;
+}
+
+/* Botón visible del select */
+.select-display {
+    width: 100%;
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Opciones desplegables */
+.options {
+    display: none; /* Oculto por defecto */
+    background-color: #fff;
+    margin-top: 5px;
+    max-height: 150px; /* Máxima altura para las opciones */
+    overflow-y: auto; /* Scroll si hay muchas opciones */
+    width: 100%; /* Asegura que las opciones ocupen el mismo ancho que el select */
+    border: 1px solid #ccc; /* Bordes para las opciones */
+    border-radius: 4px; /* Bordes redondeados */
+    position: absolute; /* Asegura que las opciones aparezcan debajo del botón */
+    z-index: 1; /* Asegura que las opciones estén por encima de otros elementos */
+}
+
+/* Estilo de cada opción */
+.options div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* Resalta opción al pasar el mouse */
+.options div:hover {
+    background-color: #f0f0f0;
+}
+
+/* Mostrar opciones activas */
+.custom-select.active .options {
+    display: block; /* Muestra las opciones cuando el select está activo */
+}
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 30px 0px 30px 0px;
+}
+
+.container h3,.container h2,.container h1,.container p{
+    color:#0a0a0a;
+    margin: 0vw 2vw 0vw 2vw;
+    padding: 0px 0px 0px 0px;
+}
+.container h1{
+    font-size: 4.5vw;
+}
+
+.container h2{
+    font-size: 3.5vw;
+}
+
+.container h3{
+    font-size: 1.5vw;
+}
+
+.precioD{
+    margin-left: 18vw !important;
+}
+
+.precioD2{
+    margin-left: 15vw !important;
+}
+.precioAzul{
+    color: #2A00FF !important;
+}
+
+.cnt-izquierdo{
+    width: 60%;
+    height: auto;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.cnt-izquierdo-h2{
+    display: flex;
+    flex-direction: row;
+}
+
+.cnt-izquierdo-productos{
+    height: auto;
+    width: 100%;
+    max-height: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.cnt-izquierdo-productos-div{
+    width: 95%;
+    min-height: 10vw;
+    max-height: 15vw;
+    display: flex;
+    box-shadow: 3px 3px #ccc;
+    margin-top: 0.5vw;
+    border-radius: 30px;
+}
+
+.cnt-izquierdo-productos-div-producto{
+    height: 100%;
+    min-width: 22vw;
+    max-width: 22vw;
+    display: flex;
+    margin-left: 1vw;
+}
+
+.cnt-izquierdo-productos-div-producto-imagen{
+    display: flex;
+    width: 45%;
+    height: 100%;
+    align-content: center;
+    align-items: center;
+}
+
+.cnt-izquierdo-productos-div-producto-imagen img{
+    width: 7.5vw;
+    height: auto;
+    padding-top: 0.5vw;
+}
+
+.eliminarImagen{
+    width: 2vw !important;
+    height: auto;
+    margin-right: 0.5vw !important;
+}
+
+.cnt-izquierdo-productos-div-producto-descripcion{
+    width: 55%;
+    height: auto;
+    text-align: center;
+}
+
+.cnt-izquierdo-productos-div-producto-descripcion h3, cnt-izquierdo-productos-div-producto-descripcion p{
+    padding: 2vw 0vw 0vw 0vw;
+}
+
+.cnt-izquierdo-productos-div-precio{
+    margin-left: 3.3vw;
+    min-width: 17%;
+    max-width: 17%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cnt-izquierdo-productos-div-cantidad{
+    display: flex;
+    min-width: 20%;
+    max-width: 20%;
+    height: auto;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin-left: 2vw;
+}
+
+.cnt-izquierdo-productos-div-cantidad img{
+    width: 1.5vw !important;
+    height: auto;
+    margin-right: 0.25vw !important;
+    margin-left: 0.25vw !important;
+}
+
+.cnt-izquierdo-productos-div-cantidad h3{
+    padding: 0vw 0vw 0vw 0vw;
+    margin: 0vw 0vw 0vw 0vw;
+}
+
+
+.cnt-izquierdo-productos-div-subtotal{
+    width: 20%;
+    height: auto;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: -3.25vw;
+}
+
+.cnt-izquierdo-segirComprando{
+    width: 100%;
+    height: auto;
+}
+
+.cnt-izquierdo-segirComprando-productos{
+    width: 100%;
+    min-height: 25vw;
+    max-height: 25vw;
+    display: flex;
+    overflow-x: auto;
+    margin-left: 3vw;
+}
+
+.cnt-izquierdo-segirComprando-productos-producto{
+    display: flex;
+    flex-direction: column;
+    min-width: 15vw;
+    max-width: 15vw;
+    min-height: 23vw;
+    max-height: 23vw;
+    box-shadow: 7px 1px #b580ff;
+    margin: 1vw 4vw 0vw 0vw;
+    border-radius: 20px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #0a0a0a;
+}
+
+.cnt-izquierdo-segirComprando-productos-producto img{
+    width: 8vw !important;
+    height: auto;
+    padding: 1vw 0vw 2vw 0vw;
+}
+
+.cnt-izquierdo-segirComprando-productos-producto h2{
+    font-size: 2vw !important;
+    padding: 2vw 0vw 2vw 0vw;
+}
+.cnt-aside {
+    width: 33vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #8900ff;
+    border-radius: 20px;
+    margin: 0vw 3vw 0vw 7vw;
+    margin-top: 8vw;
+}
+.cnt-aside-envio-label{
+    display: flex;
+    padding: 1vw 2vw 1vw 0vw;
+}
+
+.cnt-aside-envio-label input{
+    margin-left: 4.5vw;
+}
+
+.cnt-aside-pago-total{
+    display: flex;
+    padding: 2vw 0vw 2vw 0vw;
+    align-items: center;
+    justify-content: center; /* Centrado horizontal */
+}
+
+#smart-button-container{
+    margin: 1vw;
+}
+.footer{
+    width: 100%;
+    height: auto;
+    background: #D9D9D9;
+    padding-bottom: 40px;
+}
+
+.footer-hipervinculos{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 4vw;
+}
+.footer-hipervinculos-links{
+    text-align: center;
+    align-content: center;
+    width: 25%;
+}
+
+.footer-hipervinculos-links a{
+    text-decoration: none;
+    color: #0a0a0a;
+}
+
+.footer-hipervinculos-links h2{
+    color: #0a0a0a;
+    font-weight: bold;
+}
+
+.footer-imagenesRedesSociales{
+    display: flex;
+}
+
+.footer-imagenesRedesSociales-STEM{
+    width: 70%;
+    height: auto;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-imagenesRedesSociales-STEM img{
+    width: 100px;
+    height: auto;
+    float: right;
+    margin-right: 24%;
+}
+
+.footer-imagenesRedesSociales-RedesSociales{
+    height: auto;
+    width: 30%;
+    float: right;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* From Uiverse.io by McHaXYT */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2d2e32;
+    border: 2px solid #2d2e32;
+    transition: all 0.45s;
+}
+
+.button:hover {
+    transform: rotate(360deg);
+    transform-origin: center center;
+    background-color: #ffff;
+    color: #2d2e32;
+}
+
+.button:hover .btn-svg {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg)
+        brightness(103%) contrast(103%);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_izq{
+    border: none;
+    color: black;
+    background-color: #CD94FF;
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1vw;
+    padding: 0.6em 1.5em;
+    margin: auto;
+    display: flex;
+    float: left;
+    margin-left: 7.5vw;
+    margin-top: 5vw;
+    font-weight: 700;
+
+}
+.TextoButtonA{
+    display: flex;
+    align-self: center;
+
+
+}
+.button_izq:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+}
+.buttonAzul {
+    border: none;
+    color: black;
+    background-color: #CD94FF;
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1vw;
+    padding: 0.6em 1.5em;
+    margin: auto;
+    display: flex;
+    float: left;
+    margin-left: 4vw;
+    margin-top: 3vw;
+    font-weight: 700;
+
+}
+.flecha
+{
+    margin-right: 1vw;
+}
+
+.buttonAzul:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+}
+
+.cnt_izquierdo-Titulo{
+    margin-top: 6vw;
+}
+
+.buttonAzulPagar {
+    border: none;
+    color: black;
+    background-color: #CD94FF;
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3vw;
+    padding: 0.5em 3em;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin-left: 8.5vw;
+    margin-top: 1vw;
+    font-weight: 700;
+
+    text-align: center;
+
+}
+.buttonAzulPagar:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+
+}
+
+.OttoIzq{
+    padding-left: 6vw;
+    padding-top: 3vw;
+    width: 20vw;
+    height: auto;
+}
